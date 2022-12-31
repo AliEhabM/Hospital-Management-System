@@ -1,0 +1,65 @@
+﻿body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+#sidebar {
+    background-color: black;
+    float: left;
+    height: 100%;
+    width: 12em;
+}
+
+.sidebarBtn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    padding-left: 1em;
+    padding-top: 1em;
+}
+
+#sidebarOpener {
+    background-color: black;
+    padding-bottom: 1em;
+}
+
+.sidebarLink {
+    padding-left: 1em;
+    line-height: 6em;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+.sidebarBtn:hover {
+    color: red;
+}
+
+.sidebarLink:hover {
+    color: green;
+}
+
+    .sidebarLink:hover::before {
+        padding-left: 1em;
+        content: " ";
+    }
+
+.grayscale {
+    filter: grayscale(100%);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    height: 18%;
+    opacity: 0.5;
+}
+
+fieldset {
+    border: 3px groove black;
+}
+
+legend{
+    font-weight: bold;
+}
