@@ -19,7 +19,7 @@ namespace EasyHealthcare
         {
             string user = Session["userid"].ToString();
             con.Open();
-
+            //PATIENT INFORMATION
             string getId = "SELECT pid FROM PATIENT WHERE pid='" + user + "'";
             string getFName = "SELECT pFirstname FROM PATIENT WHERE pid='" + user + "'";
             string getLName = "SELECT pLastname FROM PATIENT WHERE  pid='" + user + "'";
@@ -36,12 +36,9 @@ namespace EasyHealthcare
             address.Text = cmd4.ExecuteScalar().ToString();
             phone.Text = cmd5.ExecuteScalar().ToString();
 
-
-            SqlCommand appDates = new SqlCommand("SELECT COUNT(*) FROM hasAppointment WHERE pid='" + user + "'", con);
-            int rows = (int)appDates.ExecuteScalar();
-            appointmentView(user);
+            //MEDICAL NOTE
             SqlCommand medicalNotes = new SqlCommand("SELECT COUNT(*) FROM attachNote WHERE pid='" + user + "'", con);
-            rows = (int)medicalNotes.ExecuteScalar();
+            int rows = (int)medicalNotes.ExecuteScalar();
             for (int i = 0; i < rows; i++)
             {
                 SqlCommand getNote = new SqlCommand("select medical_note from attachNote order by noteId offset @Offset rows fetch next 1 rows only", con);
@@ -56,43 +53,10 @@ namespace EasyHealthcare
             }
 
 
+
         }
 
-        protected void appointmentView(string user)
-        {
-            appointments.Rows.Clear();
-            SqlCommand appDates = new SqlCommand("SELECT COUNT(DISTINCT appointmentDate) FROM hasAppointment WHERE pid='" + user + "'", con);
-            int rows = (int)appDates.ExecuteScalar();
 
-
-            for (int i = 0; i < rows; i++)
-            {
-
-                SqlCommand getDate = new SqlCommand("SELECT DISTINCT appointmentDate FROM hasAppointment ORDER BY appointmentDate OFFSET @Offset rows fetch next 1 rows only", con);
-                getDate.Parameters.Add("@Offset", SqlDbType.Int);
-                getDate.Parameters["@Offset"].Value = i;
-                DateTime date = DateTime.Parse(getDate.ExecuteScalar().ToString());
-                SqlCommand appTimes = new SqlCommand("SELECT COUNT(*) FROM hasAppointment WHERE appointmentDate = @date", con);
-                appTimes.Parameters.Add("@date", SqlDbType.Date);
-                appTimes.Parameters["@date"].Value = date;
-                int count = (int)appTimes.ExecuteScalar();
-                for (int j = 0; j < count; j++)
-                {
-
-                    SqlCommand getTime = new SqlCommand("select appointmentTime from hasAppointment where appointmentDate = @date order by appointmentTime offset @Offset2 rows fetch next 1 rows only", con);
-                    getTime.Parameters.Add("@Offset2", SqlDbType.Int);
-                    getTime.Parameters.Add("@date", SqlDbType.Date);
-                    getTime.Parameters["@date"].Value = date;
-                    TableRow r = new TableRow();
-                    getTime.Parameters["@Offset2"].Value = j;
-                    DateTime time = DateTime.Parse(getTime.ExecuteScalar().ToString());
-                    TableCell c = new TableCell();
-                    c.Controls.Add(new LiteralControl(date.ToString("MMMM dd, yyyy") + " at " + time.ToString("HH:mm")));
-                    r.Cells.Add(c);
-                    appointments.Rows.Add(r);
-                }
-            }
-        }
 
 
         protected void reserve_Click(object sender, EventArgs e)
@@ -124,7 +88,8 @@ namespace EasyHealthcare
                     success.Visible = true;
                     existDate.Visible = false;
                     docUn.Visible = false;
-                    appointmentView(user);
+                    GridView2.DataBind();
+
                 }
                 else
                 {

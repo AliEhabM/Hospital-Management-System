@@ -20,8 +20,23 @@
         <img class="grayscale" src="hospital.png" />
     </div>
     <form id="form1" runat="server">
-        <div>
-            <fieldset style=" position: relative;">
+        <div style="float:right; width:50%;">
+            <fieldset>
+                <legend>List of Doctors</legend>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="dId" DataSourceID="SqlDataSource2" ShowHeader="False">
+                    <Columns>
+                        <asp:BoundField DataField="dId" HeaderText="dId" ReadOnly="True" SortExpression="dId" />
+                        <asp:BoundField DataField="dFirstname" HeaderText="dFirstname" SortExpression="dFirstname" />
+                        <asp:BoundField DataField="dLastname" HeaderText="dLastname" SortExpression="dLastname" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=localhost;Initial Catalog=HospitalManagement;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [dId], [dFirstname], [dLastname] FROM [doctor] ORDER BY [dId], [dFirstname], [dLastname]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+            </fieldset>
+        </div>
+        <div style="float:left; width:30%;">
+            <div>
+            <fieldset>
                 <legend>Patient Information</legend>
                  <table>
                         <tr>
@@ -56,15 +71,24 @@
                         </tr>
                     </table>
             </fieldset>
-            <fieldset style=" position: relative;">
+            <fieldset>
                 <legend>Appointments</legend>
-                <asp:Table ID="appointments" runat="server">
-                </asp:Table>
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" ShowHeader="False">
+                    <Columns>
+                        <asp:BoundField DataField="appointmentDate" HeaderText="appointmentDate" SortExpression="appointmentDate" />
+                        <asp:BoundField DataField="appointmentTime" HeaderText="appointmentTime" SortExpression="appointmentTime" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="Data Source=localhost;Initial Catalog=HospitalManagement;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT appointmentDate, appointmentTime FROM hasAppointment WHERE pid = @pid">
+                    <SelectParameters>
+                        <asp:SessionParameter Name="pid" SessionField="userid" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </fieldset>
-            <fieldset style=" position: relative;">
+            <fieldset>
                 <legend>Reserve Appointment</legend>
                 <asp:TextBox ID="datePicker" runat="server" TextMode="Date"></asp:TextBox>
-                <asp:TextBox ID="timePicker" runat="server" TextMode="Time"></asp:TextBox>&nbsp;<asp:TextBox ID="did" runat="server" TextMode="Number" placeholder="Enter Doctor ID here"></asp:TextBox>
+                <asp:TextBox ID="timePicker" runat="server" TextMode="Time"></asp:TextBox>&nbsp;<asp:TextBox ID="did" runat="server" TextMode="Number"></asp:TextBox>
                 <asp:Button ID="reserve" runat="server" Text="Reserve" OnClick="reserve_Click" /><br />
                 <asp:Label ID="existDate" runat="server" Text="You already have an appointment at this time." Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
                 <asp:Label ID="success" runat="server" Text="Reserve Successful" Font-Bold="True" ForeColor="Green" Visible="False"></asp:Label>
@@ -72,11 +96,13 @@
             </fieldset>
             </div>
         <div>
-            <fieldset style="position: center;">
+            <fieldset>
                 <legend>View Medical Note</legend>
                 <asp:Table ID="noteView" runat="server"></asp:Table>
             </fieldset>
         </div>
+        </div>
     </form>
 </body>
 </html>
+
