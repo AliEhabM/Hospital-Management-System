@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\inetpub\wwwroot\HospitalManagementSystem</_PublishTargetUrl>
-    <History>True|2023-01-02T21:21:06.7653973Z;</History>
+    <History>True|2023-01-02T22:40:03.1907364Z;True|2023-01-03T00:37:44.0589328+02:00;False|2023-01-03T00:36:49.1918206+02:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -172,10 +172,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
     <File Include="bin/WebApplication1.dll">
-      <publishTime>01/02/2023 23:20:34</publishTime>
+      <publishTime>01/03/2023 00:40:03</publishTime>
     </File>
     <File Include="bin/WebApplication1.pdb">
-      <publishTime>01/02/2023 23:20:34</publishTime>
+      <publishTime>01/03/2023 00:40:03</publishTime>
     </File>
     <File Include="contact.html">
       <publishTime>01/02/2023 15:28:35</publishTime>
@@ -187,7 +187,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/31/2022 20:37:59</publishTime>
     </File>
     <File Include="doctor.aspx">
-      <publishTime>01/02/2023 15:34:23</publishTime>
+      <publishTime>01/03/2023 00:39:56</publishTime>
     </File>
     <File Include="employee.aspx">
       <publishTime>12/31/2022 21:53:31</publishTime>
@@ -226,7 +226,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/31/2022 19:56:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/02/2023 23:21:06</publishTime>
+      <publishTime>01/03/2023 00:36:49</publishTime>
     </File>
   </ItemGroup>
 </Project>

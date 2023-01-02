@@ -28,6 +28,12 @@
         <img class="grayscale" src="hospital.png" />
     </div>
     <form id="form1" runat="server" enctype="multipart/form-data">
+        <div>
+            <fieldset>
+                <legend>Patients</legend>
+                <asp:Table ID="patients" runat="server" CellSpacing="1" GridLines="Both"></asp:Table>
+            </fieldset>
+        </div>
         <div style="text-align: center;">
             <br />
             <span>Patient ID <br />

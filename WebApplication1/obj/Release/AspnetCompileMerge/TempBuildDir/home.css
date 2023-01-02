@@ -1,0 +1,187 @@
+*{
+	margin:auto;
+	padding:auto;
+}
+
+.top{
+	width:100%;
+	background-color:#2FA5EB !important;
+	border-bottom:2px solid #f0f0f0;
+}
+.top div{
+	width:1200px;
+	color:#fff;
+	background-color:#2FA5EB !important;
+	font-family:monospace;
+	padding:10px;
+	text-align:right;
+}
+
+.logoText{
+	font-family: 'Times New Roman';
+	font-size:50px;
+}
+.logo{
+	width:100%;
+	background-color:white;
+	border-bottom:2px solid #f0f0f0;
+}
+.logo div{
+	width:1200px;
+	background-color: white;
+	font-family:calibri;
+	padding:10px;
+	text-align:left;
+}
+.logo div table a{
+	padding:10px;
+	text-decoration:none;
+	color:gray;
+}
+.logo div table a:hover{
+	color:#428bca;
+	border-bottom:2px solid gray;
+}
+
+.middle{
+	width:100%;
+	border-bottom:2px solid #f0f0f0;
+}
+.middle div{
+	width:1200px;
+	height:400px;
+	font-family:calibri;
+}
+.middle div p{
+	width:1000px;
+	font-weight:bold;
+	height:300px;
+	color:#fff;
+	opacity:0.2;
+	font-size:50px;
+	background-color:#000;
+}
+
+.info{
+	width:100%;
+	background-color: white;
+	border-bottom:2px solid #f0f0f0;
+
+}
+.info div{
+	width:1200px;
+	color:#fff;
+	background-color: white;
+	font-family:calibri;
+	text-align:right;
+}
+.info div table{
+	padding-top:30px;
+	width:1100px;
+	text-align:justify;
+	color:gray;
+	font-size:20px;
+}
+
+.container {
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+.container::after{
+	content:'';
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:linear-gradient(to bottom right, purple, beige);
+	opacity: 0.35;
+}
+
+#docPic {
+	border: none;
+	overflow-y: visible;
+	width:100%;
+}
+
+#firstLine{
+	font-size:60px;
+}
+
+
+.homeText {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 30px;
+	color: purple;
+	font-family: Georgia, serif;
+}
+
+
+
+.bottom_up{
+	width:100%;
+	background-color: white;
+	border-bottom:2px solid #f0f0f0;
+}
+.bottom_up div{
+	padding-top:20px;
+	width:1200px;
+	text-align:center;
+	background-color:white;
+	font-family:forte;
+	font-size:30px;
+	padding-bottom:20px;
+}
+.bottom_up div table{
+	padding-top:30px;
+	font-size:30px;
+	width:1100px;
+	text-align:center;
+	background-color:white;
+	font-family:calibri;
+	
+}
+
+input[type="text"]{
+	padding:12px;
+	width:250px;
+}
+select{
+	padding:12px;
+	width:250px;
+}
+textarea{
+	padding:50px;
+	width:550px;
+}
+button{
+	width:550px;
+	padding:10px;
+	color:#fff;
+	font-size:20px;
+	background-color:#2FA5EB !important;
+}
+
+
+.nav_down {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	text-align: center;
+	
+}
+	.nav_down div {
+		width: 100%;
+		color: white;
+		background-color: #2FA5EB;
+		font-family: monospace;
+		padding: 10px;
+		text-align: left;
+	}
