@@ -41,7 +41,7 @@ namespace EasyHealthcare
             int rows = (int)medicalNotes.ExecuteScalar();
             for (int i = 0; i < rows; i++)
             {
-                SqlCommand getNote = new SqlCommand("select medical_note from attachNote order by noteId offset @Offset rows fetch next 1 rows only", con);
+                SqlCommand getNote = new SqlCommand("select medical_note from attachNote where pid ='"+user+"' order by noteId offset @Offset rows fetch next 1 rows only", con);
                 getNote.Parameters.Add("@Offset", SqlDbType.Int);
                 getNote.Parameters["@Offset"].Value = i;
                 string note = (string)getNote.ExecuteScalar();

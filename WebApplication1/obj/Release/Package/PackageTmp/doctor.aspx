@@ -111,7 +111,7 @@
                 <legend>Appointments</legend>
                 <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" ShowHeader="False">
                     <Columns>
-                        <asp:BoundField DataField="appointmentDate" HeaderText="appointmentDate" SortExpression="appointmentDate" />
+                        <asp:BoundField DataField="appointmentDate" HeaderText="appointmentDate" DataFormatString="{0:MMMM dd, yyyy}" SortExpression="appointmentDate" />
                         <asp:BoundField DataField="appointmentTime" HeaderText="appointmentTime" SortExpression="appointmentTime" />
                     </Columns>
                 </asp:GridView>
