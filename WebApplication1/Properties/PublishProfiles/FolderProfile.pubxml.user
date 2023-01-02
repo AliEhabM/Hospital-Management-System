@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>W:\Ejust 2022-2023\Fall 2022\CNC 111 - Networks and web Programming\Final Project\Publish</_PublishTargetUrl>
-    <History>True|2022-12-31T22:55:50.5138013Z;True|2023-01-01T00:52:14.9936412+02:00;</History>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\HospitalManagementSystem</_PublishTargetUrl>
+    <History>True|2023-01-02T21:21:06.7653973Z;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -16,7 +16,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/31/2022 20:37:59</publishTime>
     </File>
     <File Include="about.html">
-      <publishTime>12/31/2022 19:10:42</publishTime>
+      <publishTime>01/02/2023 14:28:35</publishTime>
     </File>
     <File Include="background.png">
       <publishTime>12/31/2022 20:37:59</publishTime>
@@ -172,13 +172,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
     <File Include="bin/WebApplication1.dll">
-      <publishTime>01/01/2023 00:52:14</publishTime>
+      <publishTime>01/02/2023 23:20:34</publishTime>
     </File>
     <File Include="bin/WebApplication1.pdb">
-      <publishTime>01/01/2023 00:52:14</publishTime>
+      <publishTime>01/02/2023 23:20:34</publishTime>
     </File>
     <File Include="contact.html">
-      <publishTime>12/31/2022 19:10:01</publishTime>
+      <publishTime>01/02/2023 15:28:35</publishTime>
     </File>
     <File Include="corona.png">
       <publishTime>12/31/2022 20:37:59</publishTime>
@@ -187,7 +187,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/31/2022 20:37:59</publishTime>
     </File>
     <File Include="doctor.aspx">
-      <publishTime>12/31/2022 23:37:54</publishTime>
+      <publishTime>01/02/2023 15:34:23</publishTime>
     </File>
     <File Include="employee.aspx">
       <publishTime>12/31/2022 21:53:31</publishTime>
@@ -196,7 +196,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/31/2022 19:10:28</publishTime>
     </File>
     <File Include="home.html">
-      <publishTime>12/31/2022 22:26:08</publishTime>
+      <publishTime>01/02/2023 14:28:39</publishTime>
     </File>
     <File Include="homeinsurance.png">
       <publishTime>12/31/2022 20:37:59</publishTime>
@@ -208,25 +208,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/31/2022 17:46:00</publishTime>
     </File>
     <File Include="loginform.aspx">
-      <publishTime>01/01/2023 00:55:32</publishTime>
+      <publishTime>01/02/2023 20:54:17</publishTime>
     </File>
     <File Include="logo.png">
       <publishTime>12/31/2022 20:37:59</publishTime>
     </File>
     <File Include="patient.aspx">
-      <publishTime>12/31/2022 21:53:46</publishTime>
+      <publishTime>01/02/2023 22:47:04</publishTime>
     </File>
     <File Include="sidebar.js">
       <publishTime>12/31/2022 19:43:05</publishTime>
     </File>
     <File Include="signupform.aspx">
-      <publishTime>12/31/2022 20:44:48</publishTime>
+      <publishTime>01/02/2023 20:53:06</publishTime>
     </File>
     <File Include="style.css">
       <publishTime>12/31/2022 19:56:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/01/2023 00:52:14</publishTime>
+      <publishTime>01/02/2023 23:21:06</publishTime>
     </File>
   </ItemGroup>
 </Project>
