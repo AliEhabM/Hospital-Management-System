@@ -73,9 +73,9 @@
             </fieldset>
             <fieldset>
                 <legend>Appointments</legend>
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" ShowHeader="False">
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" ShowHeader="False" CellSpacing="2">
                     <Columns>
-                        <asp:BoundField DataField="appointmentDate" HeaderText="appointmentDate" SortExpression="appointmentDate" />
+                        <asp:BoundField DataField="appointmentDate" HeaderText="appointmentDate" DataFormatString="{0:MMMM dd, yyyy}" SortExpression="appointmentDate" />
                         <asp:BoundField DataField="appointmentTime" HeaderText="appointmentTime" SortExpression="appointmentTime" />
                     </Columns>
                 </asp:GridView>

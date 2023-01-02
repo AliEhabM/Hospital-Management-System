@@ -31,7 +31,18 @@
         <div>
             <fieldset>
                 <legend>Patients</legend>
-                <asp:Table ID="patients" runat="server" CellSpacing="1" GridLines="Both"></asp:Table>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="pid" DataSourceID="SqlDataSource1" ShowHeader="False">
+                    <Columns>
+                        <asp:BoundField DataField="pid" HeaderText="pid" ReadOnly="True" SortExpression="pid" />
+                        <asp:BoundField DataField="pFirstname" HeaderText="pFirstname" SortExpression="pFirstname" />
+                        <asp:BoundField DataField="pLastname" HeaderText="pLastname" SortExpression="pLastname" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=localhost;Initial Catalog=HospitalManagement;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT DISTINCT a.pid, a.pFirstname, a.pLastname FROM patient as a, hasAppointment WHERE hasAppointment.did = @userid">
+                    <SelectParameters>
+                        <asp:SessionParameter Name="userid" SessionField="userid" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </fieldset>
         </div>
         <div style="text-align: center;">
@@ -98,8 +109,17 @@
             </fieldset>
             <fieldset style="width: 23%; float:left; position:relative; left: 6em">
                 <legend>Appointments</legend>
-                <asp:Table ID="appointments" runat="server">
-                </asp:Table>
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" ShowHeader="False">
+                    <Columns>
+                        <asp:BoundField DataField="appointmentDate" HeaderText="appointmentDate" SortExpression="appointmentDate" />
+                        <asp:BoundField DataField="appointmentTime" HeaderText="appointmentTime" SortExpression="appointmentTime" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=localhost;Initial Catalog=HospitalManagement;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT appointmentDate, appointmentTime FROM hasAppointment WHERE pid = @pid">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="pID" Name="pid" PropertyName="Text" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
             </fieldset>
         </div>
 
