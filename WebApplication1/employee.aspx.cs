@@ -148,7 +148,7 @@ namespace EasyHealthcare
                 DateTime fulldate = DateTime.Parse(dateTime);
                 string date = fulldate.ToString("MMMM dd, yyyy");
                 string time = fulldate.ToString("HH:mm");
-                SqlCommand delDateP = new SqlCommand("DELETE FROM hasAppointment WHERE appointmentDate = @date and appointmentTime = cast(@time as TIME) and pid=@pid", con);
+                SqlCommand delDateP = new SqlCommand("DELETE FROM hasAppointment WHERE appointmentDate = @date and appointmentTime = @time and pid=@pid", con);
                 delDateP.Parameters.Add("@date", SqlDbType.Date);
                 delDateP.Parameters["@date"].Value = date;
                 delDateP.Parameters.Add("@time", SqlDbType.Time);
@@ -156,7 +156,7 @@ namespace EasyHealthcare
                 delDateP.Parameters.Add("@pid", SqlDbType.Int);
                 delDateP.Parameters["@pid"].Value = IDentry.Text;
 
-                SqlCommand delDateD = new SqlCommand("DELETE FROM hasAppointment WHERE appointmentDate = @date and appointmentTime = cast(@time as TIME) and did=@did", con);
+                SqlCommand delDateD = new SqlCommand("DELETE FROM hasAppointment WHERE appointmentDate = @date and appointmentTime = @time and did=@did", con);
                 delDateD.Parameters.Add("@date", SqlDbType.Date);
                 delDateD.Parameters["@date"].Value = date;
                 delDateD.Parameters.Add("@time", SqlDbType.Time);

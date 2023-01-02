@@ -61,28 +61,36 @@ namespace EasyHealthcare
         protected void appointmentView(string user)
         {
             appointments.Rows.Clear();
-            SqlCommand appDates = new SqlCommand("SELECT COUNT(*) FROM hasAppointment WHERE pid='" + user + "'", con);
+            SqlCommand appDates = new SqlCommand("SELECT COUNT(DISTINCT appointmentDate) FROM hasAppointment WHERE pid='" + user + "'", con);
             int rows = (int)appDates.ExecuteScalar();
+
 
             for (int i = 0; i < rows; i++)
             {
-                SqlCommand getDate = new SqlCommand("select appointmentDate from hasAppointment order by appointmentDate offset @Offset rows fetch next 1 rows only", con);
+
+                SqlCommand getDate = new SqlCommand("SELECT DISTINCT appointmentDate FROM hasAppointment ORDER BY appointmentDate OFFSET @Offset rows fetch next 1 rows only", con);
                 getDate.Parameters.Add("@Offset", SqlDbType.Int);
                 getDate.Parameters["@Offset"].Value = i;
                 DateTime date = DateTime.Parse(getDate.ExecuteScalar().ToString());
-                SqlCommand getTime = new SqlCommand("select appointmentTime from hasAppointment order by appointmentTime offset @Offset2 rows fetch next 1 rows only", con);
-                getTime.Parameters.Add("@Offset2", SqlDbType.Int);
-
-                TableRow r = new TableRow();
-                for (int j = 0; j < 1; j++)
+                SqlCommand appTimes = new SqlCommand("SELECT COUNT(*) FROM hasAppointment WHERE appointmentDate = @date", con);
+                appTimes.Parameters.Add("@date", SqlDbType.Date);
+                appTimes.Parameters["@date"].Value = date;
+                int count = (int)appTimes.ExecuteScalar();
+                for (int j = 0; j < count; j++)
                 {
+
+                    SqlCommand getTime = new SqlCommand("select appointmentTime from hasAppointment where appointmentDate = @date order by appointmentTime offset @Offset2 rows fetch next 1 rows only", con);
+                    getTime.Parameters.Add("@Offset2", SqlDbType.Int);
+                    getTime.Parameters.Add("@date", SqlDbType.Date);
+                    getTime.Parameters["@date"].Value = date;
+                    TableRow r = new TableRow();
                     getTime.Parameters["@Offset2"].Value = j;
                     DateTime time = DateTime.Parse(getTime.ExecuteScalar().ToString());
                     TableCell c = new TableCell();
                     c.Controls.Add(new LiteralControl(date.ToString("MMMM dd, yyyy") + " at " + time.ToString("HH:mm")));
                     r.Cells.Add(c);
+                    appointments.Rows.Add(r);
                 }
-                appointments.Rows.Add(r);
             }
         }
 

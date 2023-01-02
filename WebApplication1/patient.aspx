@@ -64,7 +64,7 @@
             <fieldset style=" position: relative;">
                 <legend>Reserve Appointment</legend>
                 <asp:TextBox ID="datePicker" runat="server" TextMode="Date"></asp:TextBox>
-                <asp:TextBox ID="timePicker" runat="server" TextMode="Time"></asp:TextBox>&nbsp;<asp:TextBox ID="did" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="timePicker" runat="server" TextMode="Time"></asp:TextBox>&nbsp;<asp:TextBox ID="did" runat="server" TextMode="Number" placeholder="Enter Doctor ID here"></asp:TextBox>
                 <asp:Button ID="reserve" runat="server" Text="Reserve" OnClick="reserve_Click" /><br />
                 <asp:Label ID="existDate" runat="server" Text="You already have an appointment at this time." Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
                 <asp:Label ID="success" runat="server" Text="Reserve Successful" Font-Bold="True" ForeColor="Green" Visible="False"></asp:Label>
