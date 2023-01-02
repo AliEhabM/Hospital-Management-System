@@ -13,14 +13,13 @@ namespace EasyHealthcare
 {
     public partial class patient : System.Web.UI.Page
     {
-        
+
         SqlConnection con = new SqlConnection(@"Data Source=localhost;Initial Catalog=HospitalManagement;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             string user = Session["userid"].ToString();
             con.Open();
-            //string user = Session["userid"].ToString();
-            
+
             string getId = "SELECT pid FROM PATIENT WHERE pid='" + user + "'";
             string getFName = "SELECT pFirstname FROM PATIENT WHERE pid='" + user + "'";
             string getLName = "SELECT pLastname FROM PATIENT WHERE  pid='" + user + "'";
@@ -38,6 +37,30 @@ namespace EasyHealthcare
             phone.Text = cmd5.ExecuteScalar().ToString();
 
 
+            SqlCommand appDates = new SqlCommand("SELECT COUNT(*) FROM hasAppointment WHERE pid='" + user + "'", con);
+            int rows = (int)appDates.ExecuteScalar();
+            appointmentView(user);
+            SqlCommand medicalNotes = new SqlCommand("SELECT COUNT(*) FROM attachNote WHERE pid='" + user + "'", con);
+            rows = (int)medicalNotes.ExecuteScalar();
+            for (int i = 0; i < rows; i++)
+            {
+                SqlCommand getNote = new SqlCommand("select medical_note from attachNote order by noteId offset @Offset rows fetch next 1 rows only", con);
+                getNote.Parameters.Add("@Offset", SqlDbType.Int);
+                getNote.Parameters["@Offset"].Value = i;
+                string note = (string)getNote.ExecuteScalar();
+                TableRow r = new TableRow();
+                TableCell c = new TableCell();
+                c.Controls.Add(new LiteralControl(note));
+                r.Cells.Add(c);
+                noteView.Rows.Add(r);
+            }
+
+
+        }
+
+        protected void appointmentView(string user)
+        {
+            appointments.Rows.Clear();
             SqlCommand appDates = new SqlCommand("SELECT COUNT(*) FROM hasAppointment WHERE pid='" + user + "'", con);
             int rows = (int)appDates.ExecuteScalar();
 
@@ -61,24 +84,8 @@ namespace EasyHealthcare
                 }
                 appointments.Rows.Add(r);
             }
-
-            SqlCommand medicalNotes = new SqlCommand("SELECT COUNT(*) FROM attachNote WHERE pid='" + user + "'", con);
-            rows = (int)medicalNotes.ExecuteScalar();
-            for (int i = 0; i < rows; i++)
-            {
-                SqlCommand getNote = new SqlCommand("select medical_note from attachNote order by noteId offset @Offset rows fetch next 1 rows only", con);
-                getNote.Parameters.Add("@Offset", SqlDbType.Int);
-                getNote.Parameters["@Offset"].Value = i;
-                string note = (string)getNote.ExecuteScalar();
-                TableRow r = new TableRow();
-                TableCell c = new TableCell();
-                c.Controls.Add(new LiteralControl(note));
-                r.Cells.Add(c);
-                noteView.Rows.Add(r);
-            }
-
-
         }
+
 
         protected void reserve_Click(object sender, EventArgs e)
         {
@@ -109,6 +116,7 @@ namespace EasyHealthcare
                     success.Visible = true;
                     existDate.Visible = false;
                     docUn.Visible = false;
+                    appointmentView(user);
                 }
                 else
                 {
@@ -129,8 +137,8 @@ namespace EasyHealthcare
                         existDate.Visible = true;
                     }
                 }
-            } 
-            catch(Exception)
+            }
+            catch (Exception)
             {
                 //do nothing 
             }
