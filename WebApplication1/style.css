@@ -87,7 +87,7 @@ legend{
     background-color: #fff;
     font-family: Arial;
     font-size: 16px;
-    color: #000;
+    color:black;
     min-height: 25px;
     text-align: left;
     border: none 0px transparent;
@@ -96,14 +96,14 @@ legend{
     .rows:hover {
         background-color: #ff8000;
         font-family: Arial;
-        color: #fff;
+        color: black;
         text-align: left;
     }
 
 .selectedrow {
     background-color: #ff8000;
     font-family: Arial;
-    color: #fff;
+    color: black;   
     font-weight: bold;
     text-align: left;
 }
@@ -111,7 +111,7 @@ legend{
 .mydatagrid a  {
     background-color: Transparent;
     padding: 5px 5px 5px 5px;
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-weight: bold;
 }
@@ -123,7 +123,7 @@ legend{
 
 .mydatagrid span  {
     background-color: #c9c9c9;
-    color: #000;
+    color:black;
     padding: 5px 5px 5px 5px;
 }
 

@@ -79,6 +79,7 @@
     <Content Include="home.html" />
     <Content Include="homeinsurance.png" />
     <Content Include="hospital.png" />
+    <Content Include="index.html" />
     <Content Include="loginform.aspx" />
     <Content Include="logo.png" />
     <Content Include="patient.aspx" />
