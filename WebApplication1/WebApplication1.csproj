@@ -83,8 +83,9 @@
     <Content Include="logo.png" />
     <Content Include="patient.aspx" />
     <Content Include="sidebar.js" />
-    <Content Include="signupform.aspx" />
     <Content Include="login.css" />
+    <Content Include="signupform.aspx" />
+    <Content Include="signup.css" />
     <Content Include="style.css" />
     <Content Include="Web.config" />
   </ItemGroup>

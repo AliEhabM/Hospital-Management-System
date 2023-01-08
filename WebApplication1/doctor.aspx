@@ -31,7 +31,7 @@
         <div>
             <fieldset>
                 <legend>Patients</legend>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="pid" DataSourceID="SqlDataSource1" ShowHeader="False">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="pid" DataSourceID="SqlDataSource1" ShowHeader="False" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" AllowPaging="True">
                     <Columns>
                         <asp:BoundField DataField="pid" HeaderText="pid" ReadOnly="True" SortExpression="pid" />
                         <asp:BoundField DataField="pFirstname" HeaderText="pFirstname" SortExpression="pFirstname" />
@@ -109,7 +109,7 @@
             </fieldset>
             <fieldset style="width: 23%; float:left; position:relative; left: 6em">
                 <legend>Appointments</legend>
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" ShowHeader="False">
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" ShowHeader="False" CssClass="mydatagrid" HeaderStyle-CssClass="header" RowStyle-CssClass="rows">
                     <Columns>
                         <asp:BoundField DataField="appointmentDate" HeaderText="appointmentDate" DataFormatString="{0:MMMM dd, yyyy}" SortExpression="appointmentDate" />
                         <asp:BoundField DataField="appointmentTime" HeaderText="appointmentTime" SortExpression="appointmentTime" />
