@@ -23,7 +23,7 @@
         <div style="float:right; width:50%;">
             <fieldset>
                 <legend>List of Doctors</legend>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="dId" DataSourceID="SqlDataSource2" ShowHeader="False">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="dId" DataSourceID="SqlDataSource2" ShowHeader="False" CssClass="mydatagrid" HeaderStyle-CssClass="header" RowStyle-CssClass="rows">
                     <Columns>
                         <asp:BoundField DataField="dId" HeaderText="dId" ReadOnly="True" SortExpression="dId" />
                         <asp:BoundField DataField="dFirstname" HeaderText="dFirstname" SortExpression="dFirstname" />
@@ -34,8 +34,8 @@
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             </fieldset>
         </div>
-        <div style="float:left; width:30%;">
-            <div>
+        <div style="float:left; width:50%;">
+            <div >
             <fieldset>
                 <legend>Patient Information</legend>
                  <table>
@@ -73,7 +73,7 @@
             </fieldset>
             <fieldset>
                 <legend>Appointments</legend>
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" ShowHeader="False" CellSpacing="2">
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" ShowHeader="False" CssClass="mydatagrid" HeaderStyle-CssClass="header" RowStyle-CssClass="rows">
                     <Columns>
                         <asp:BoundField DataField="appointmentDate" HeaderText="appointmentDate" DataFormatString="{0:MMMM dd, yyyy}" SortExpression="appointmentDate" />
                         <asp:BoundField DataField="appointmentTime" HeaderText="appointmentTime" SortExpression="appointmentTime" />

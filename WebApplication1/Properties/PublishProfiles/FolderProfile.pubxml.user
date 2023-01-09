@@ -5,12 +5,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\inetpub\wwwroot\HospitalManagementSystem</_PublishTargetUrl>
-    <History>True|2023-01-02T23:44:04.2677483Z;True|2023-01-03T01:13:29.1569594+02:00;True|2023-01-03T00:56:16.6560594+02:00;True|2023-01-03T00:40:03.1907364+02:00;True|2023-01-03T00:37:44.0589328+02:00;False|2023-01-03T00:36:49.1918206+02:00;</History>
+    <History>True|2023-01-08T18:56:11.0766526Z;False|2023-01-08T20:55:44.3155659+02:00;True|2023-01-03T01:44:04.2677483+02:00;True|2023-01-03T01:13:29.1569594+02:00;True|2023-01-03T00:56:16.6560594+02:00;True|2023-01-03T00:40:03.1907364+02:00;True|2023-01-03T00:37:44.0589328+02:00;False|2023-01-03T00:36:49.1918206+02:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include=".DS_Store">
-      <publishTime>12/31/2022 20:37:59</publishTime>
+      <publishTime>01/07/2023 19:46:19</publishTime>
     </File>
     <File Include="a.png">
       <publishTime>12/31/2022 20:37:59</publishTime>
@@ -172,13 +172,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
     <File Include="bin/WebApplication1.dll">
-      <publishTime>01/03/2023 01:44:03</publishTime>
+      <publishTime>01/08/2023 20:51:47</publishTime>
     </File>
     <File Include="bin/WebApplication1.pdb">
-      <publishTime>01/03/2023 01:44:03</publishTime>
+      <publishTime>01/08/2023 20:51:47</publishTime>
     </File>
     <File Include="contact.html">
-      <publishTime>01/02/2023 15:28:35</publishTime>
+      <publishTime>01/06/2023 19:56:42</publishTime>
     </File>
     <File Include="corona.png">
       <publishTime>12/31/2022 20:37:59</publishTime>
@@ -187,10 +187,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/31/2022 20:37:59</publishTime>
     </File>
     <File Include="doctor.aspx">
-      <publishTime>01/03/2023 01:13:24</publishTime>
+      <publishTime>01/06/2023 19:56:23</publishTime>
     </File>
     <File Include="employee.aspx">
-      <publishTime>01/03/2023 00:54:59</publishTime>
+      <publishTime>01/08/2023 20:53:30</publishTime>
     </File>
     <File Include="home.css">
       <publishTime>01/03/2023 01:37:50</publishTime>
@@ -204,29 +204,35 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="hospital.png">
       <publishTime>12/31/2022 19:43:05</publishTime>
     </File>
+    <File Include="index.html">
+      <publishTime>01/08/2023 19:16:23</publishTime>
+    </File>
     <File Include="login.css">
-      <publishTime>01/03/2023 00:43:35</publishTime>
+      <publishTime>01/06/2023 23:46:23</publishTime>
     </File>
     <File Include="loginform.aspx">
-      <publishTime>01/03/2023 00:43:54</publishTime>
+      <publishTime>01/06/2023 23:59:21</publishTime>
     </File>
     <File Include="logo.png">
       <publishTime>12/31/2022 20:37:59</publishTime>
     </File>
     <File Include="patient.aspx">
-      <publishTime>01/03/2023 01:11:34</publishTime>
+      <publishTime>01/06/2023 17:22:24</publishTime>
     </File>
     <File Include="sidebar.js">
       <publishTime>12/31/2022 19:43:05</publishTime>
     </File>
+    <File Include="signup.css">
+      <publishTime>01/06/2023 23:45:56</publishTime>
+    </File>
     <File Include="signupform.aspx">
-      <publishTime>01/02/2023 20:53:06</publishTime>
+      <publishTime>01/06/2023 23:46:34</publishTime>
     </File>
     <File Include="style.css">
-      <publishTime>12/31/2022 19:56:42</publishTime>
+      <publishTime>01/08/2023 19:31:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/03/2023 00:36:49</publishTime>
+      <publishTime>01/08/2023 20:55:44</publishTime>
     </File>
   </ItemGroup>
 </Project>

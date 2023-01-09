@@ -18,9 +18,9 @@
 </head>
 <body>
     <div id="sidebar" style="display:none">
-        <a class="sidebarLink" href="home.html">Home</a><br />
-        <a class="sidebarLink" href="about.html">About Us</a><br />
-        <a class="sidebarLink" href="contact.html">Contact Us</a><br />
+        <a class="sidebarLink" href="index.html#hero">Home</a><br />
+        <a class="sidebarLink" href="index.html#about">About Us</a><br />
+        <a class="sidebarLink" href="index.html#footer">Contact Us</a><br />
         <a class="sidebarLink" href="loginform.aspx">Log Out</a><br />
     </div>
     <div id="sidebarOpener"><button class="sidebarBtn" onclick="sidebarCtrl()">☰</button></div>

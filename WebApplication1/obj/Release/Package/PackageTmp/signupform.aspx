@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     <link rel="stylesheet" href="login.css" >
+     <link rel="stylesheet" href="signup.css" >
      <link rel="icon" href="logo.png" type="image/gif" sizes="16x16">
      <title>Hospital Management System | Login Page</title>
 </head>
@@ -19,8 +19,14 @@
         <p>ID</p>
         <%--<input type="text" required name="username" placeholder="Enter userID here">--%>
         <asp:TextBox ID="userID" runat="server" required name="userID" placeholder="Enter userID here" OnTextChanged="userID_TextChanged"> </asp:TextBox>
-        <p>Enter Username</p>
-        <asp:TextBox ID="username" runat="server" required name="username" placeholder="Enter username here" OnTextChanged="username_TextChanged"></asp:TextBox>
+        <%--<p>Enter Username</p>
+        <asp:TextBox ID="username" runat="server" required name="username" placeholder="Enter username here" OnTextChanged="username_TextChanged"></asp:TextBox>--%>
+        <p>Enter FirstName</p>
+        <asp:TextBox ID="firstname" runat="server" required name="firstname" placeholder="Enter firstname here" OnTextChanged="firstname_TextChanged"></asp:TextBox>
+        <p>Enter LastName</p>
+        <asp:TextBox ID="lastname" runat="server" required name="lastname" placeholder="Enter lastname here" OnTextChanged="lastname_TextChanged"></asp:TextBox>
+         <p>Enter Email</p>
+        <asp:TextBox ID="email" runat="server" required name="email" placeholder="Enter email here" OnTextChanged="email_TextChanged"></asp:TextBox>
         <p>Create Password</p>
         <%--<input type="password" name="password" required placeholder="Enter Password here">--%>
         <asp:TextBox ID="password" runat="server" type="password" name="password" required placeholder="Enter Password here" OnTextChanged="password_TextChanged"></asp:TextBox>
